@@ -7,4 +7,7 @@
   <view class="usermotto">
     <text class="user-motto">我是孙中奇爸爸</text>
   </view>
+  <view class="usermotto">
+    <image src="../../images/bookmark1.png" background-size="cover"></image>
+  </view> 
 </view>
