@@ -8,5 +8,18 @@
     "navigationBarBackgroundColor": "#BFEFFF",
     "navigationBarTitleText": "医路由你",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "制作书签",
+      "iconPath": "images/made.png",
+      "selectedIconPath": "images/made.png"
+    },{
+      "pagePath": "pages/logs/logs",
+      "text": "我的书签",
+      "iconPath": "images/my.png",
+      "selectedIconPath": "images/my.png"
+    }]
   }
 }
