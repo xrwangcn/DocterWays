@@ -22,7 +22,7 @@
       "selectedIconPath": "images/inmy.png"
     }],
     "borderStyle": "white",
-    "backgroundColor": "#DBDBDB",
+    "backgroundColor": "#EAEAEA",
     "selectedColor": "#030303"
   },
   "debug" : true   
