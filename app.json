@@ -1,7 +1,7 @@
 {
   "pages":[
     "pages/made/made",
-    "pages/my/my"
+    "pages/lookbookmark/lookbookmark"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -16,7 +16,7 @@
       "iconPath": "images/made.png",
       "selectedIconPath": "images/madeadd.png"      
     },{
-      "pagePath": "pages/my/my",
+      "pagePath": "pages/lookbookmark/lookbookmark",
       "text": "我的书签",
       "iconPath": "images/my.png",
       "selectedIconPath": "images/inmy.png"

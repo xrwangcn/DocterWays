@@ -1,0 +1,9 @@
+<view class="container">
+  <template is="head" data="{{title: 'createContext'}}" />
+  <view class="page-body">
+    <view class="page-section">
+      <canvas class="canvas-element" canvas-id="myCanvas" style="width:271;height:520"></canvas>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

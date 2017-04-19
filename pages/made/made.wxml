@@ -42,6 +42,7 @@
       </view>
     </view>
     <view class="page-section">
+      <view class="weui-cells__title" style="text-align:center">选择书签样式</view>
       <view class="page-section-spacing">
         <view class="flex-wrp" style="flex-direction:row;">
           <image src="../../images/bookmark1min.png"></image>
