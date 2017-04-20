@@ -6,6 +6,7 @@
   width: 100%;
   height: 1200rpx;
   background-color: #ffffff;
+  background-image:"http://img.bimg.126.net/photo/b2u0kpWhlsptQxwh6LJ7qQ==/4008203668360653115.jpg";
 }
 .canvas-buttons {
   padding: 30rpx 50rpx 10rpx;
