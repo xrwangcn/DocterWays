@@ -5,20 +5,24 @@ Page({
     },
     onLoad: function () {
         const ctx = wx.createCanvasContext('myCanvas')
-        ctx.drawImage("../../images/bookmark1.png", 60, 30, 250, 500)
+
 
 
 
         ctx.setFontSize(15)
         ctx.setTextAlign('left')
-        ctx.fillText('textAlign=left', 150, 60)
+        ctx.fillText('课程：医学', 100,180)
 
-        ctx.setTextAlign('center')
-        ctx.fillText('textAlign=center', 150, 80)
+        ctx.setTextAlign('left')
+        ctx.fillText('话题：免疫类', 100, 200)
 
-        ctx.setTextAlign('right')
-        ctx.fillText('textAlign=right', 150, 100)
+        ctx.setTextAlign('left')
+        ctx.fillText('发言者：xr', 100, 220)
+        ctx.setTextAlign('left')
+        ctx.fillText('关注度：5', 100, 240)
 
+
+        ctx.draw()
 
 
     }
