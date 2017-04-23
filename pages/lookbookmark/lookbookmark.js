@@ -2,6 +2,7 @@
 Page({
     data: {
         logs: []
+
     },
     onLoad: function () {
         const ctx = wx.createCanvasContext('myCanvas')
@@ -29,11 +30,35 @@ Page({
 
         for (var i = 0; i < bookmark.length; i++) {
             ctx.setTextAlign('left')
-            ctx.fillText(bookmark[i], 100, 280 + 20 * i);
+            ctx.fillText(bookmark[i], 100, 280 + 20 * i)
         }
 
         ctx.draw()
+        ctx.save()
 
-
+    },
+    saveButton: function () {
+        wx.canvasToTempFilePath({
+            canvasId: 'myCanvas',
+            success: function success(res) {
+                wx.saveFile({
+                    tempFilePath: res.tempFilePath,
+                    success: function success(res) {
+                        console.log('saved::' + res.savedFilePath);
+                        wx.showToast({
+                            title: '保存成功',
+                            icon: 'success',
+                            duration: 2000
+                        })
+                    },
+                    complete: function fail(e) {
+                        console.log(e.errMsg);
+                    }
+                });
+            },
+            complete: function complete(e) {
+                console.log(e.errMsg);
+            }
+        });
     }
 })

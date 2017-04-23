@@ -2,10 +2,10 @@
   <template is="head" data="{{title: 'view'}}" />
   <view class="page-body">
     <view class="page-section">
-      <view class="weui-cells__title">课程</view>
+      <view class="weui-cells__title" >课程</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input class="weui-input" auto-focus placeholder="最大输入长度为10" />
+          <input class="weui-input" auto-focus placeholder="最大输入长度为10" id="subject"/>
         </view>
       </view>
     </view>
@@ -13,7 +13,7 @@
       <view class="weui-cells__title">话题</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" />
+          <input class="weui-input" maxlength="10" placeholder="最大输入长度为10"  id="title"/>
         </view>
       </view>
     </view>
@@ -21,7 +21,7 @@
       <view class="weui-cells__title">发言者</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input class="weui-input" maxlength="10" bindinput="bindKeyInput" placeholder="请输入你的名字" />
+          <input class="weui-input" maxlength="10" bindinput="bindKeyInput" placeholder="请输入你的名字" id="speaker" />
         </view>
       </view>
     </view>
@@ -29,7 +29,7 @@
       <view class="weui-cells__title">关注度</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input class="weui-input" bindinput="bindReplaceInput" placeholder="关注度请输入1-5" />
+          <input class="weui-input" bindinput="bindReplaceInput" placeholder="关注度请输入1-5"  id="level"/>
         </view>
       </view>
     </view>
@@ -37,32 +37,44 @@
       <view class="weui-cells__title">书签内容</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-textarea">
-          <textarea bindblur="bindTextAreaBlur" auto-height />
+          <textarea bindblur="bindTextAreaBlur" auto-height  id="bookmark"/>
         </view>
       </view>
     </view>
     <view class="page-section">
-      <view class="weui-cells__title" style="text-align:center">选择书签样式</view>
-      <view class="page-section-spacing">
-        <view class="flex-wrp" style="flex-direction:row;">
-          <image src="../../images/bookmark1min.png"></image>
-          <image src="../../images/bookmark1min.png"></image>
-          <image src="../../images/bookmark1min.png"></image>
+      <view class="weui-cells__title" style="text-align:center" >选择书签样式</view>
+      <radio-group name="radio" class="weui-cells__title"  style="text-align:center" id="style">
+        <label >
+          <radio value="radio1" />样式一</label>
+        <label style="padding-left:30rpx">
+          <radio value="radio2" />样式二</label>
+        <label style="padding-left:30rpx">
+          <radio value="radio3" />样式三</label>
+        <view class="page-section-spacing">
+          <view class="flex-wrp" style="flex-direction:row;">
+            <image src="../../images/bookmark1min.png"></image>
+            <image src="../../images/bookmark1min.png"></image>
+            <image src="../../images/bookmark1min.png"></image>
+          </view>
         </view>
-      </view>
-    </view>
-    <view class="page-section">
-      <view class="page-section-spacing">
-        <view class="flex-wrp" style="flex-direction:row;">
-          <image src="../../images/bookmark1min.png"></image>
-          <image src="../../images/bookmark1min.png"></image>
-          <image src="../../images/bookmark1min.png"></image>
+        <label>
+          <radio value="radio4" />样式四</label>
+        <label>
+          <radio value="radio5" style="padding-left:30rpx;padding-top:5%"/>样式五</label>
+        <label>
+          <radio value="radio6" style="padding-left:30rpx;padding-top:5%"/>样式六</label>
+        <view class="page-section-spacing">
+          <view class="flex-wrp" style="flex-direction:row;">
+            <image src="../../images/bookmark1min.png"></image>
+            <image src="../../images/bookmark1min.png"></image>
+            <image src="../../images/bookmark1min.png"></image>
+          </view>
         </view>
-      </view>
+      </radio-group>
     </view>
   </view>
   <view class="btn-area" id="buttonContainer">
-    <button type="primary">生成书签</button>
+    <button type="primary" bindtap="madeButton">生成书签</button>
   </view>
   <template is="foot" />
 </view>

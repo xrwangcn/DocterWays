@@ -1,10 +1,14 @@
 <view class="container">
   <template is="head" data="{{title: 'createContext'}}" />
-  <view class="page-body"  >
+  <view class="page-body">
     <view class="page-section">
       <canvas class="canvas-element" canvas-id="myCanvas">
       </canvas>
     </view>
+      <view class="btn-area" id="buttonContainer" >
+    <button type="primary" bindtap="saveButton">保存到本地</button>
   </view>
+  </view>
+
   <template is="foot" />
 </view>
