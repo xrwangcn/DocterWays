@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/made/made",
-    "pages/lookbookmark/lookbookmark"
+    "pages/lookbookmark/lookbookmark",
+    "pages/made/lookbookmark"
   ],
   "window":{
     "backgroundTextStyle":"light",

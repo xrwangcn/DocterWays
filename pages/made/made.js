@@ -22,21 +22,5 @@ Page({
         userInfo: userInfo
       })
     })
-  },
-  madeButton:function(){
-    wx.navigateTo({
-      url: '../lookbookmark/lookbookmark',
-      success: function(res){
-        // success
-         console.log('OK');
-      },
-      fail: function(res) {
-        // fail
-        console.log('error');
-      },
-      complete: function(res) {
-        // complete
-      }
-    })
   }
 })
