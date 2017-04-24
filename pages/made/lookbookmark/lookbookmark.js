@@ -9,33 +9,12 @@ Page({
 
 
 
+        ctx.drawImage("../../images/bookmark1.png", 50, 20, 271, 512)
 
-        ctx.setFontSize(15)
-        ctx.setTextAlign('left')
-        ctx.fillText('课程：医学', 100, 180)
-
-        ctx.setTextAlign('left')
-        ctx.fillText('话题：免疫类', 100, 200)
-
-        ctx.setTextAlign('left')
-        ctx.fillText('发言者：xr', 100, 220)
-        ctx.setTextAlign('left')
-        ctx.fillText('关注度：★★★★☆', 100, 240)
-
-        var bookmark = new Array();
-        var str = "发上来的咖啡机阿斯兰的看法就爱圣诞快乐附近阿萨德开了房jasdflaksdfjlaskfjasldkf圣诞快乐发啊圣诞快乐发就是打开房间 ";
-        for (var i = 0, j = str.length / 12; i < j; i++) {
-            bookmark[i] = str.substr(i * 12, 12);
-        }
-
-        for (var i = 0; i < bookmark.length; i++) {
-            ctx.setTextAlign('left')
-            ctx.fillText(bookmark[i], 100, 280 + 20 * i)
-        }
 
         ctx.draw()
         ctx.save()
-
+        
     },
     saveButton(event) {
         wx.canvasToTempFilePath({
@@ -45,10 +24,28 @@ Page({
                     tempFilePath: res.tempFilePath,
                     success: function success(res) {
                         console.log('saved::' + res.savedFilePath);
+
                         wx.showToast({
                             title: '保存成功',
                             icon: 'success',
                             duration: 2000
+                        })
+                        wx.previewImage({
+                            current: 'res.savedFilePath', // 当前显示图片的链接，不填则默认为 urls 的第一张
+                            success: function (res) {
+                                // success
+                                wx.showToast({
+                                    title: '预览成功',
+                                    icon: 'success',
+                                    duration: 2000
+                                })
+                            },
+                            fail: function (res) {
+                                // fail
+                            },
+                            complete: function (res) {
+                                // complete
+                            }
                         })
                     },
                     complete: function fail(e) {

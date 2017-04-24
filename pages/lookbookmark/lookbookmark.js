@@ -8,8 +8,17 @@ Page({
         const ctx = wx.createCanvasContext('myCanvas')
 
 
-
-
+        var devBgImg = new Image()
+        devBgImg.src = "../../images/bookmark1.png"
+        if (devBgImg.complete) { // 如果图片已经存在于浏览器缓存，直接调用回调函数  
+            ctx.drawImage('devBgImg', 50, 20, 271, 512)
+            return // 直接返回，不用再处理onload事件  
+        }
+        devBgImg.onload = function () {
+            ctx.drawImage('devBgImg', 50, 20, 271, 512)
+            
+        }
+        //ctx.drawImage("../../images/bookmark1.png", 50, 20, 271, 512)
         ctx.setFontSize(15)
         ctx.setTextAlign('left')
         ctx.fillText('课程：医学', 100, 180)

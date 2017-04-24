@@ -74,7 +74,7 @@
     </view>
   </view>
   <view class="btn-area" id="buttonContainer">
-    <navigator url="lookbookmark?title=navigate" hover-class="navigator-hover">
+    <navigator url="../lookbookmark/lookbookmark?title=navigate" hover-class="navigator-hover">
       <button type="primary" >生成书签</button>
     </navigator>
   </view>
