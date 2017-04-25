@@ -74,9 +74,7 @@
         </radio-group>
       </view>
       <view class="btn-area">
-        <navigator url="../lookbookmark/lookbookmark?title=navigate" hover-class="navigator-hover">
-          <button type="primary" formType="submit">生成书签</button>
-        </navigator>
+        <button type="primary" formType="submit">生成书签</button>
       </view>
     </form>
   </view>

@@ -26,11 +26,23 @@ Page({
     var subject='课程：' + e.detail.value.subject
     var title= '话题：' + e.detail.value.title
     var speaker= '发言者：'+ e.detail.value.speaker
-    var level='关注度：' + e.detail.value.level
+    var level= e.detail.value.level
     var content='' + e.detail.value.content
     var style= '' + e.detail.value.style
 
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     console.log('zifu::', subject)
+    wx.navigateTo({
+      url: "../lookbookmark/lookbookmark?subject="+subject+"&title="+title+"&speaker="+speaker+"&level="+level+"&content="+content+"&style="+style,
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
   }
 })

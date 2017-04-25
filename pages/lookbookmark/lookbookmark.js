@@ -4,27 +4,35 @@ Page({
         logs: []
 
     },
-    onLoad: function () {
+    onLoad: function (query) {
         const ctx = wx.createCanvasContext('myCanvas')
 
-
-
+        //var subject=query.subject
+        console.log(query)
 
         //ctx.drawImage("../../images/bookmark1.png", 50, 20, 271, 512)
         ctx.setFontSize(15)
         ctx.setTextAlign('left')
-        ctx.fillText('课程：医学', 100, 180)
+        ctx.fillText(query.subject, 100, 180)
 
         ctx.setTextAlign('left')
-        ctx.fillText('话题：免疫类', 100, 200)
+        ctx.fillText(query.title, 100, 200)
 
         ctx.setTextAlign('left')
-        ctx.fillText('发言者：xr', 100, 220)
+        ctx.fillText(query.speaker, 100, 220)
         ctx.setTextAlign('left')
-        ctx.fillText('关注度：★★★★☆', 100, 240)
+        var star='关注度：'
+        for(var i=0;i<5;i++)
+        {
+            if(i<query.level)
+             star=star+'★'
+            else
+             star=star+'☆'
+        }
+        ctx.fillText(star, 100, 240)
 
         var bookmark = new Array();
-        var str = "发上来的咖啡机阿斯兰的看法就爱圣诞快乐附近阿萨德开了房jasdflaksdfjlaskfjasldkf圣诞快乐发啊圣诞快乐发就是打开房间 ";
+        var str = query.content;
         for (var i = 0, j = str.length / 12; i < j; i++) {
             bookmark[i] = str.substr(i * 12, 12);
         }
