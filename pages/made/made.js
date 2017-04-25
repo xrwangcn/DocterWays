@@ -3,8 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    name:''
   },
   //事件处理函数
   bindViewTap: function () {
@@ -22,5 +21,16 @@ Page({
         userInfo: userInfo
       })
     })
+  },
+  formSubmit: function (e) {
+    var subject='课程：' + e.detail.value.subject
+    var title= '话题：' + e.detail.value.title
+    var speaker= '发言者：'+ e.detail.value.speaker
+    var level='关注度：' + e.detail.value.level
+    var content='' + e.detail.value.content
+    var style= '' + e.detail.value.style
+
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    console.log('zifu::', subject)
   }
 })
