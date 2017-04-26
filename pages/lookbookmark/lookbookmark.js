@@ -13,7 +13,6 @@ Page({
         const ctx = wx.createCanvasContext('myCanvas')
 
         //var subject=query.subject
-
         this.setData({
             subject: query.subject,
             title: query.title,
