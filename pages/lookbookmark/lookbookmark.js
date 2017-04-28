@@ -31,13 +31,13 @@ Page({
         //ctx.drawImage("../../images/bookmark1.png", 50, 20, 271, 512)
         ctx.setFontSize(15)
         ctx.setTextAlign('left')
-        ctx.fillText(this.data.subject, 100, 180)
+        ctx.fillText('课程：' + this.data.subject, 100, 180)
 
         ctx.setTextAlign('left')
-        ctx.fillText(this.data.title, 100, 200)
+        ctx.fillText('话题：'+this.data.title, 100, 200)
 
         ctx.setTextAlign('left')
-        ctx.fillText(this.data.speaker, 100, 220)
+        ctx.fillText('发言者：'+this.data.speaker, 100, 220)
         ctx.setTextAlign('left')
         var star = '关注度：'
         for (var i = 0; i < 5; i++) {
@@ -71,32 +71,37 @@ Page({
 
         }
     },
-    saveButton(event) {
+    // saveButton(event) {
 
-        wx.canvasToTempFilePath({
-            canvasId: 'myCanvas',
-            success: function success(res) {
-                var lbimgsrc = res.tempFilePath
-                wx.saveFile({
-                    tempFilePath: res.tempFilePath,
-                    success: function success(res) {
-                        console.log('saved::' + res.savedFilePath);
-                        wx.showToast({
-                            title: '保存成功',
-                            icon: 'success',
-                            duration: 2000
-                        })
-                    },
-                    complete: function fail(e) {
-                        console.log(e.errMsg);
-                    }
-                });
-            },
-            complete: function complete(e) {
-                console.log(e.errMsg);
-            }
-        })
+    //     wx.canvasToTempFilePath({
+    //         canvasId: 'myCanvas',
+    //         success: function success(res) {
+    //             var lbimgsrc = res.tempFilePath
+    //             wx.saveFile({
+    //                 tempFilePath: res.tempFilePath,
+    //                 success: function success(res) {
+    //                     console.log('saved::' + res.savedFilePath);
+    //                     wx.showToast({
+    //                         title: '保存成功',
+    //                         icon: 'success',
+    //                         duration: 2000
+    //                     })
+    //                 },
+    //                 complete: function fail(e) {
+    //                     console.log(e.errMsg);
+    //                 }
+    //             });
+    //         },
+    //         complete: function complete(e) {
+    //             console.log(e.errMsg);
+    //         }
+    //     })
+    // }
+    saveButton:function(e){
+        var currentValue='#start#' + '#s#'+ this.data.subject+ '#t#'+ this.data.title+ '#p#'+ this.data.speaker+ '#l#'+ this.data.level+ '#c#'+ this.data.content+ '#style#'+ this.data.style+'#end#'
 
+        var temp = currentValue+wx.getStorageSync("temp");
+        wx.setStorageSync('temp', temp);
+        console.log(':::'+temp);
     }
-
 })
