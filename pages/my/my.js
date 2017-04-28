@@ -7,7 +7,12 @@ Page({
   onLoad: function () {
 
   },
-  delButton:function(e){
+  delButton: function (e) {
     wx.clearStorageSync();
+    wx.showToast({
+      title: '清空成功',
+      icon: 'success',
+      duration: 2000
+    })
   }
 })
