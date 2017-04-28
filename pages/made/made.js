@@ -55,7 +55,7 @@ Page({
     if (level.length == 0) {
       wx.showModal({
         title: "请输入完整",
-        content: "请填写关注度",
+        content: "请选择关注度",
         showCancel: false,
         confirmText: "确定"
       })

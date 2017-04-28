@@ -30,7 +30,18 @@
         <view class="weui-cells__title">关注度</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
-            <input class="weui-input" placeholder="关注度请输入1-5" name="level" />
+            <radio-group name="level" class="weui-cells__title" style="text-align:center">
+              <label>
+                <radio value="1" style="padding-bottom:10rpx"/>1</label>
+              <label>
+                <radio value="2" style="padding-left:50rpx;padding-bottom:10rpx" />2</label>
+              <label>
+                <radio value="3" style="padding-left:50rpx;padding-bottom:10rpx" />3</label>
+              <label>
+                <radio value="4" style="padding-left:50rpx;padding-bottom:10rpx" />4</label>
+              <label>
+                <radio value="5" style="padding-left:50rpx;padding-bottom:10rpx" />5</label>
+            </radio-group>
           </view>
         </view>
       </view>
@@ -38,7 +49,7 @@
         <view class="weui-cells__title">书签内容</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-textarea">
-            <textarea bindblur="bindTextAreaBlur" name="content" auto-height />
+            <textarea bindblur="bindTextAreaBlur" placeholder="请输入书签内容" name="content" auto-height />
           </view>
         </view>
       </view>
@@ -46,11 +57,11 @@
         <view class="weui-cells__title" style="text-align:center">选择书签样式</view>
         <radio-group name="style" class="weui-cells__title" style="text-align:center">
           <label>
-            <radio value="radio1" />样式一</label>
+            <radio value="1" />样式一</label>
           <label style="padding-left:30rpx">
-            <radio value="radio2" />样式二</label>
+            <radio value="2" />样式二</label>
           <label style="padding-left:30rpx">
-            <radio value="radio3" />样式三</label>
+            <radio value="3" />样式三</label>
           <view class="page-section-spacing">
             <view class="flex-wrp" style="flex-direction:row;">
               <image src="../../images/bookmark1min.png"></image>
@@ -59,11 +70,11 @@
             </view>
           </view>
           <label>
-            <radio value="radio4" />样式四</label>
+            <radio value="4" />样式四</label>
           <label>
-            <radio value="radio5" style="padding-left:30rpx;padding-top:5%" />样式五</label>
+            <radio value="5" style="padding-left:30rpx;padding-top:5%" />样式五</label>
           <label>
-            <radio value="radio6" style="padding-left:30rpx;padding-top:5%" />样式六</label>
+            <radio value="6" style="padding-left:30rpx;padding-top:5%" />样式六</label>
           <view class="page-section-spacing">
             <view class="flex-wrp" style="flex-direction:row;">
               <image src="../../images/bookmark1min.png"></image>
