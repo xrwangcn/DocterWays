@@ -2,7 +2,8 @@
 var util = require('../../utils/util.js')
 Page({
   data: {
-    logs: []
+    logs: [],
+    array: ['中国', '美国', '巴西', '日本'],
   },
   onLoad: function () {
 
