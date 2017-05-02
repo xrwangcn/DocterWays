@@ -101,7 +101,7 @@ Page({
     //     })
     // }
     saveButton: function (e) {
-        var currentValue = '#start#' + '#s#' + this.data.subject + '#t#' + this.data.title + '#p#' + this.data.speaker + '#l#' + this.data.level + '#c#' + this.data.content + '#style#' + this.data.style + '#end#'
+        var currentValue = '#start#' + this.data.subject + '$$' + this.data.title + '$$' + this.data.speaker + '$$' + this.data.level + '$$' + this.data.content + '$$' + this.data.style
 
         var temp = currentValue + wx.getStorageSync("temp");
         wx.setStorageSync('temp', temp);

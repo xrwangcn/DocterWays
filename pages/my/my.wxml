@@ -11,8 +11,8 @@
             <view class="weui-label">当前选择</view>
           </view>
           <view class="weui-cell__bd">
-            <picker bindchange="sunjectChange" value="{{index}}" range="{{array}}">
-              <view class="weui-input">{{array[index]}}</view>
+            <picker bindchange="sunjectChange" value="{{index}}" range="{{temp}}">
+              <view class="weui-input">{{temp[index]}}</view>
             </picker>
           </view>
         </view>
@@ -31,7 +31,10 @@
         </view>
       </view>
       <view class="btn-area" id="buttonContainer">
-        <button type="primary" bindtap="delButton">查看当前书签</button>
+        <button type="default" bindtap="updataButton">更新书签</button>
+      </view>
+      <view class="btn-area" id="buttonContainer">
+        <button type="primary" bindtap="findButton">预览选择书签</button>
       </view>
       <view class="btn-area" id="buttonContainer">
         <button type="warn" bindtap="delButton">删除所有书签</button>
