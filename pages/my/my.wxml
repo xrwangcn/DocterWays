@@ -11,8 +11,8 @@
             <view class="weui-label">当前选择</view>
           </view>
           <view class="weui-cell__bd">
-            <picker bindchange="sunjectChange" value="{{index}}" range="{{temp}}">
-              <view class="weui-input">{{temp[index]}}</view>
+            <picker bindchange="sunjectChange" value="{{index}}" range="{{tempAllInfo}}" range-key="subject">
+              <view class="weui-input">{{tempAllInfo[index]}}</view>
             </picker>
           </view>
         </view>

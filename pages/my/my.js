@@ -32,6 +32,7 @@ Page({
     this.setData({
       temp: gettemp.split("#start#")
     })
+    this.data.temp.shift()
     console.log(this.data.temp);
     var jsonLength = 0;
     for (var i in this.data.temp) {
@@ -40,16 +41,16 @@ Page({
     console.log(jsonLength);
 
     var singletemp = new Array();
-    for (var i = 1; i < jsonLength; i++) {
+    for (var i = 0; i < jsonLength; i++) {
       var single = this.data.temp[i].split('$$');
       console.log(single);
-      singletemp[i]=new Object();
+      singletemp[i] = new Object();
       singletemp[i].subject = single[0],
-      singletemp[i].title = single[1],
-      singletemp[i].speaker = single[2],
-      singletemp[i].level = single[3],
-      singletemp[i].content = single[4],
-      singletemp[i].style = single[5]
+        singletemp[i].title = single[1],
+        singletemp[i].speaker = single[2],
+        singletemp[i].level = single[3],
+        singletemp[i].content = single[4],
+        singletemp[i].style = single[5]
 
       console.log(singletemp[i]);
     }
@@ -63,7 +64,7 @@ Page({
       // tempAllInfo[i].content = single[4],
       // tempAllInfo[i].style = single[4]
     })
-     console.log(this.data.tempAllInfo);
+    console.log(this.data.tempAllInfo);
     wx.showToast({
       title: '更新成功',
       icon: 'success',
