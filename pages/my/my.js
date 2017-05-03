@@ -26,6 +26,7 @@ Page({
     console.log(this.data.tempcontent)
   },
   delButton: function (e) {
+
     wx.clearStorageSync();
     wx.showToast({
       title: '清空成功',
@@ -103,6 +104,9 @@ Page({
       // tempAllInfo[i].style = single[4]
     })
     console.log(this.data.tempAllInfo);
+    this.setData({
+      tempcontent: this.data.tempAllInfo[0].member
+    })
     if (this.data.updataflag == true) {
       wx.showToast({
         title: '更新成功',
@@ -125,5 +129,21 @@ Page({
     this.setData({
       index: e.detail.value
     })
+  },
+
+  findButton: function (e) {
+    wx.navigateTo({
+      url: "newlb/newlb?subject=" + this.data.tempcontent[this.data.sindex].subject + "&title=" + this.data.tempcontent[this.data.sindex].title + "&speaker=" + this.data.tempcontent[this.data.sindex].speaker + "&level=" + this.data.tempcontent[this.data.sindex].level + "&content=" + this.data.tempcontent[this.data.sindex].content + "&style=" + this.data.tempcontent[this.data.sindex].style,
+      success: function (res) {
+        // success
+      },
+      fail: function (res) {
+        // fail
+      },
+      complete: function (res) {
+        // complete
+      }
+    })
   }
+
 })

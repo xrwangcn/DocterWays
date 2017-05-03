@@ -2,7 +2,8 @@
   "pages":[
     "pages/made/made",
     "pages/lookbookmark/lookbookmark",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/my/newlb/newlb"
   ],
   "window":{
     "backgroundTextStyle":"light",
