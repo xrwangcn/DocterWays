@@ -2,10 +2,13 @@
 var util = require('../../utils/util.js')
 Page({
   data: {
-    index: 0,
+    //两个选择器的数组指数
+    sindex: 0,
+    index:0,
     //每个元素都是一个未切分的字符串书签
     temp: [],
     tempAllInfo: [],
+    tempcontent:[],
     array: ['中国', '美国', '巴西', '日本'],
   },
   onLoad: function () {
@@ -101,6 +104,14 @@ Page({
     })
   },
   sunjectChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      sindex: e.detail.value,
+      tempcontent:this.data.tempAllInfo[e.detail.value].member
+    })
+    console.log(this.data.tempcontent);
+  },
+  contentPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
