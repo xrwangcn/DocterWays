@@ -4,12 +4,13 @@ Page({
   data: {
     //两个选择器的数组指数
     sindex: 0,
-    index:0,
+    index: 0,
     //每个元素都是一个未切分的字符串书签
     temp: [],
     tempAllInfo: [],
-    tempcontent:[],
+    tempcontent: [],
     array: ['中国', '美国', '巴西', '日本'],
+    updataflag: false,
   },
   onLoad: function () {
     var gettemp = wx.getStorageSync("temp");
@@ -17,7 +18,12 @@ Page({
     this.setData({
       temp: gettemp.split("#start#")
     })
-
+    this.updataButton();
+    this.setData({
+      updataflag: true,
+      tempcontent: this.data.tempAllInfo[0].member
+    })
+    console.log(this.data.tempcontent)
   },
   delButton: function (e) {
     wx.clearStorageSync();
@@ -97,17 +103,20 @@ Page({
       // tempAllInfo[i].style = single[4]
     })
     console.log(this.data.tempAllInfo);
-    wx.showToast({
-      title: '更新成功',
-      icon: 'success',
-      duration: 2000
-    })
+    if (this.data.updataflag == true) {
+      wx.showToast({
+        title: '更新成功',
+        icon: 'success',
+        duration: 2000
+      })
+    }
+
   },
   sunjectChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       sindex: e.detail.value,
-      tempcontent:this.data.tempAllInfo[e.detail.value].member
+      tempcontent: this.data.tempAllInfo[e.detail.value].member
     })
     console.log(this.data.tempcontent);
   },
