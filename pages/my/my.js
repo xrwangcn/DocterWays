@@ -37,6 +37,7 @@ Page({
     }
   },
   delButton: function (e) {
+    var that=this;
     wx.showModal({
       title: "警告",
       content: "确定删除所有书签？",
@@ -46,7 +47,7 @@ Page({
       success: function (res) {
         if (res.confirm) {
           console.log('用户点击确定');
-          this.setData({
+          that.setData({
             tempAllInfo: [],
             tempcontent: [],
           });
@@ -56,10 +57,7 @@ Page({
             icon: 'success',
             duration: 2000
           })
-          this.setData({
-            tempAllInfo: [],
-            tempcontent: [],
-          })
+
         } else if (res.cancel) {
           console.log('用户点击取消')
                     this.setData({
@@ -167,9 +165,11 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       sindex: e.detail.value,
-      tempcontent: this.data.tempAllInfo[e.detail.value].member
+      tempcontent: this.data.tempAllInfo[e.detail.value].member,
+      index:0
     })
     console.log(this.data.tempcontent);
+    console.log(this.data.sindex);
   },
   contentPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -180,7 +180,7 @@ Page({
 
   findButton: function (e) {
     wx.navigateTo({
-      url: "newlb/newlb?subject=" + this.data.tempcontent[this.data.sindex].subject + "&title=" + this.data.tempcontent[this.data.sindex].title + "&speaker=" + this.data.tempcontent[this.data.sindex].speaker + "&level=" + this.data.tempcontent[this.data.sindex].level + "&content=" + this.data.tempcontent[this.data.sindex].content + "&style=" + this.data.tempcontent[this.data.sindex].style,
+      url: "newlb/newlb?subject=" + this.data.tempcontent[this.data.index].subject + "&title=" + this.data.tempcontent[this.data.index].title + "&speaker=" + this.data.tempcontent[this.data.index].speaker + "&level=" + this.data.tempcontent[this.data.index].level + "&content=" + this.data.tempcontent[this.data.index].content + "&style=" + this.data.tempcontent[this.data.index].style,
       success: function (res) {
         // success
       },
