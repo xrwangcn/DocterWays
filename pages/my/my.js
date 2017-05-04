@@ -21,23 +21,56 @@ Page({
     this.updataButton();
     this.setData({
       updataflag: true,
-      tempcontent: this.data.tempAllInfo[0].member
     })
+    if (this.data.tempAllInfo[0] != undefined) {
+      this.setData({
+        tempcontent: this.data.tempAllInfo[0].member
+      })
+    }
     console.log(this.data.tempcontent)
+    if (this.data.temp.length == 0) {
+      wx.showToast({
+        title: '没有书签',
+        image: '../../images/warn.png',
+        duration: 2000
+      })
+    }
   },
   delButton: function (e) {
-      wx.showModal({
-        title: "请输入完整",
-        content: "请选择样式",
-        showCancel: true,
-        confirmText: "确定"
-      })
-    wx.clearStorageSync();
-    wx.showToast({
-      title: '清空成功',
-      icon: 'success',
-      duration: 2000
+    wx.showModal({
+      title: "警告",
+      content: "确定删除所有书签？",
+      confirmText: "确定",
+      cancelText: "取消",
+      confirmColor: "#FF0000",
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定');
+          this.setData({
+            tempAllInfo: [],
+            tempcontent: [],
+          });
+          wx.clearStorageSync();
+          wx.showToast({
+            title: '清空成功',
+            icon: 'success',
+            duration: 2000
+          })
+          this.setData({
+            tempAllInfo: [],
+            tempcontent: [],
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+                    this.setData({
+            tempAllInfo: [],
+            tempcontent: [],
+          });
+        }
+      }
     })
+
+
   },
   findButton: function (e) {
     var gettemp = wx.getStorageSync("temp");
@@ -109,13 +142,22 @@ Page({
       // tempAllInfo[i].style = single[4]
     })
     console.log(this.data.tempAllInfo);
-    this.setData({
-      tempcontent: this.data.tempAllInfo[0].member
-    })
-    if (this.data.updataflag == true) {
+    if (this.data.tempAllInfo[0] != undefined) {
+      this.setData({
+        tempcontent: this.data.tempAllInfo[0].member
+      })
+    }
+
+    if (this.data.updataflag == true && jsonLength != 0) {
       wx.showToast({
         title: '更新成功',
         icon: 'success',
+        duration: 2000
+      })
+    } else if (this.data.updataflag == true && jsonLength == 0) {
+      wx.showToast({
+        title: '没有书签',
+        image: '../../images/warn.png',
         duration: 2000
       })
     }
