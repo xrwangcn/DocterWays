@@ -26,7 +26,12 @@ Page({
     console.log(this.data.tempcontent)
   },
   delButton: function (e) {
-
+      wx.showModal({
+        title: "请输入完整",
+        content: "请选择样式",
+        showCancel: true,
+        confirmText: "确定"
+      })
     wx.clearStorageSync();
     wx.showToast({
       title: '清空成功',

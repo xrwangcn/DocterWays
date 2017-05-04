@@ -34,13 +34,13 @@
               <label>
                 <radio value="1" style="padding-bottom:10rpx"/>1</label>
               <label>
-                <radio value="2" style="padding-left:50rpx;padding-bottom:10rpx" />2</label>
+                <radio value="2" style="padding-left:{{paddingleft}};padding-bottom:10rpx" />2</label>
               <label>
-                <radio value="3" style="padding-left:50rpx;padding-bottom:10rpx" />3</label>
+                <radio value="3" style="padding-left:{{paddingleft}};padding-bottom:10rpx" />3</label>
               <label>
-                <radio value="4" style="padding-left:50rpx;padding-bottom:10rpx" />4</label>
+                <radio value="4" style="padding-left:{{paddingleft}};padding-bottom:10rpx" />4</label>
               <label>
-                <radio value="5" style="padding-left:50rpx;padding-bottom:10rpx" />5</label>
+                <radio value="5" style="padding-left:{{paddingleft}};padding-bottom:10rpx" />5</label>
             </radio-group>
           </view>
         </view>
@@ -63,7 +63,7 @@
           <label style="padding-left:30rpx">
             <radio value="3" />样式三</label>
           <view class="page-section-spacing">
-            <view class="flex-wrp" style="flex-direction:row;">
+            <view class="flex-wrp" style="flex-direction:row;width:{{width}};margin-left:{{marginleft}}">
               <image src="../../images/bookmark1min.png"></image>
               <image src="../../images/bookmark1min.png"></image>
               <image src="../../images/bookmark1min.png"></image>
@@ -76,7 +76,7 @@
           <label>
             <radio value="6" style="padding-left:30rpx;padding-top:5%" />样式六</label>
           <view class="page-section-spacing">
-            <view class="flex-wrp" style="flex-direction:row;">
+            <view class="flex-wrp" style="flex-direction:row;width:{{width}};margin-left:{{marginleft}}">
               <image src="../../images/bookmark1min.png"></image>
               <image src="../../images/bookmark1min.png"></image>
               <image src="../../images/bookmark1min.png"></image>

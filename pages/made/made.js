@@ -3,7 +3,10 @@
 var app = getApp()
 Page({
   data: {
-    name: ''
+    name: '',
+    paddingleft: '50rpx',
+    width: '',
+    marginleft: ''
   },
   onLoad: function () {
     console.log('onLoad')
@@ -15,6 +18,33 @@ Page({
         userInfo: userInfo
       })
     })
+
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res.model)
+        console.log(res.pixelRatio)
+        console.log(res.windowWidth)
+        console.log(res.windowHeight)
+        console.log(res.language)
+        console.log(res.version)
+      }
+    })
+    //控制显示样式
+    var phoneWeight;
+    wx.getSystemInfo({
+      success: function (res) {
+        phoneWeight = res.windowWidth
+      }
+    })
+    console.log("::" + phoneWeight)
+    if (phoneWeight == 320) {
+      this.setData({
+        paddingleft: '13px',
+        width: '270px',
+        marginleft: '-25px'
+      })
+      posX = 80;
+    }
   },
   formSubmit: function (e) {
     var subject = e.detail.value.subject

@@ -1,11 +1,11 @@
 <view class="container">
   <view class="page-body">
     <view class="page-section">
-      <canvas class="canvas-element" canvas-id="myCanvas">
+      <canvas class="canvas-element" canvas-id="myCanvas" style="background-image:{{backgroundImage}};height:{{height}};background-position:{{position}};">
       </canvas>
     </view>
-      <view class="btn-area" id="buttonContainer" >
-    <button type="primary" bindtap="saveButton">保存到我的书签</button>
-  </view>
+    <view class="btn-area" id="buttonContainer">
+      <button type="primary" bindtap="saveButton">保存到我的书签</button>
+    </view>
   </view>
 </view>
