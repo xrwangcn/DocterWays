@@ -43,7 +43,6 @@ Page({
         width: '270px',
         marginleft: '-25px'
       })
-      posX = 80;
     }
   },
   formSubmit: function (e) {
