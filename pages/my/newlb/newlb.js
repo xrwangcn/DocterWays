@@ -128,14 +128,14 @@ Page({
         ctx.save()
 
     },
-    onShareAppMessage: function () {
-        return {
-            title: '医路由你·电子书签',
-            desc: '这是我制作的书签，一起来看一下吧',
-            path: "pages/lookbookmark/lookbookmark?subject=" + this.data.subject + "&title=" + this.data.title + "&speaker=" + this.data.speaker + "&level=" + this.data.level + "&content=" + this.data.content + "&style=" + this.data.style,
+    // onShareAppMessage: function () {
+    //     return {
+    //         title: '医路由你·电子书签',
+    //         desc: '这是我制作的书签，一起来看一下吧',
+    //         path: "pages/lookbookmark/lookbookmark?subject=" + this.data.subject + "&title=" + this.data.title + "&speaker=" + this.data.speaker + "&level=" + this.data.level + "&content=" + this.data.content + "&style=" + this.data.style,
 
-        }
-    },
+    //     }
+    // },
     // saveButton(event) {
 
     //     wx.canvasToTempFilePath({
